@@ -16,6 +16,14 @@
         <%= link_to "戻る", customers_path, class: "btn btn-default" %>
         
         <hr />
+        
+            <h2>対応履歴</h2>
+            <% @comments.each do |comment| %>
+                <p>
+                    <%= comment.body %>
+                </p>
+            <% end %>
+            
         <%= form_for(@comment, url: { controller: :comments, action: :create }) do |f| %>
             <div class="form-group">
                 <%= f.label :body , "対応内容" %><br>
