@@ -9,6 +9,7 @@ class Customer < ActiveRecord::Base
     validates :email,
         presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
     validates :company_id, presence: true
+    validates :post_id, presence: true
     
     def full_name
         family_name + given_name
