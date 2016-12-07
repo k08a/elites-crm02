@@ -4,8 +4,8 @@
       <p><b><%= @customer.errors.count %>件のエラーがあります</b></p>
       
       <ul>
-      <% @customer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
