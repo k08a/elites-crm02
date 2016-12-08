@@ -10,11 +10,15 @@ class CommentsController < ApplicationController
     
     def create
         @comment = Comment.new(comment_params)
+        #################課題08ーif文追加################
         if @comment.save
             redirect_to customer_path(@comment.customer_id)
         else
-            redirect_to customer_path(@comment.customer_id)
+            @customer = @comment.customer
+            @comments = @customer.comments
+            render template: "customers/show"
         end
+        ###################ここまで####################
     end
     
     def edit
